@@ -1,0 +1,22 @@
+{
+  "documents": [
+    {
+      "id": "tomato_early_blight_001",
+      "crop": "tomato",
+      "disease": "Early Blight",
+      "causal_organism": "Alternaria solani",
+      "symptoms": [
+        "Brown spots can develop on tomato leaves.",
+        "Spots may show concentric ring patterns.",
+        "Disease can cause affected leaves to yellow and die."
+      ],
+      "management": [
+        "Remove and destroy severely affected plant material.",
+        "Maintain good field sanitation.",
+        "Avoid prolonged leaf wetness where possible."
+      ],
+      "source": "Tamil Nadu Agricultural University",
+      "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+    }
+  ]
+}
