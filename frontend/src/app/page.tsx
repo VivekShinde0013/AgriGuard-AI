@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const stats = [
   {
@@ -65,6 +66,7 @@ const recentCases = [
 ];
 
 export default function Home() {
+  const router = useRouter();
   const [activeNav, setActiveNav] = useState("Dashboard");
 
   return (
@@ -98,7 +100,12 @@ export default function Home() {
             ].map((item) => (
               <button
                 key={item.name}
-                onClick={() => setActiveNav(item.name)}
+                onClick={() => {
+                  setActiveNav(item.name);
+                  if (item.name === "Cases") {
+                    router.push("/cases");
+                  }
+                }}
                 className={`mb-1 flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${activeNav === item.name
                   ? "bg-green-50 text-green-700"
                   : "text-slate-600 hover:bg-slate-50"
