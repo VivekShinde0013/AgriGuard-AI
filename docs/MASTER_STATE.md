@@ -1,8 +1,8 @@
 # AgriGuard AI — Master State
 
-Current phase: Repository Initialization
-Current milestone: I0 — Repository Foundation
-Date: 17 September 2026
+Current phase: MVP Frontend Integration
+Current milestone: Officer Dashboard + Cases Route
+Date: 18 September 2026
 Hackathon: 18 September 2026
 
 ## Team
@@ -16,6 +16,13 @@ T6 — Integrations / RAG / Translation / TTS
 ## MVP
 Tomato
 Healthy, Early Blight, Late Blight, Leaf Mold, Septoria Leaf Spot
+
+## Completed work
+- T2 Officer Dashboard shell implemented.
+- Officer Cases route implemented at `/cases`.
+- Dashboard Cases navigation connected to the Cases route.
+- Cases UI uses clearly labeled demonstration data; backend integration is pending.
+- Changes merged into `develop` and production build verified successfully.
 
 ## Integration milestones
 I1 Auth + DB
