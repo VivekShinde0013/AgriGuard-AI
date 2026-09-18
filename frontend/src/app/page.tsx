@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import ImageUploader from "@/components/ImageUploader";
 
 const stats = [
   {
@@ -192,7 +193,17 @@ export default function Home() {
                 Monitor crop disease reports, risks and validation activity.
               </p>
             </section>
+            {/* Disease Scan */}
+            <section>
+              <div className="mb-4">
+                <h3 className="text-lg font-semibold">Disease Detection</h3>
+                <p className="mt-1 text-sm text-slate-500">
+                  Upload a tomato leaf image to get an AI disease prediction.
+                </p>
+              </div>
 
+              <ImageUploader />
+            </section>
             {/* Stats */}
             <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
               {stats.map((stat) => (
