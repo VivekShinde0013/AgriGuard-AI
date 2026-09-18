@@ -1,10 +1,10 @@
 ﻿"use client";
 
 import { useState } from "react";
-import ImageUploader from "@/components/ImageUploader";
+import ImageUploader, { type PredictionResponse } from "@/components/ImageUploader";
 
 export default function Home() {
-  const [scanResult, setScanResult] = useState<string | null>(null);
+  const [scanResult, setScanResult] = useState<PredictionResponse | null>(null);
 
   const scanned = scanResult !== null;
 
@@ -109,11 +109,13 @@ export default function Home() {
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-lg font-bold text-orange-600">MODERATE RISK</p>
-                        <p className="mt-1 font-medium text-slate-900">Early Blight</p>
+                        <p className="mt-1 font-medium text-slate-900">
+                          {scanResult.display_name}
+                        </p>
                       </div>
 
                       <div className="rounded-full bg-orange-100 px-3 py-1 text-sm font-semibold text-orange-700">
-                        94%
+                        {scanResult.confidence_percent}%
                       </div>
                     </div>
 
@@ -121,7 +123,7 @@ export default function Home() {
                       <p className="text-sm font-medium text-slate-600">Risk Factors</p>
 
                       <div className="mt-2 space-y-1 text-sm text-slate-600">
-                        <p>ΓÇó Detected disease: Early Blight</p>
+                        <p>• Detected disease: {scanResult.display_name}</p>
                         <p>ΓÇó Humidity: 72%</p>
                         <p>ΓÇó Recent rainfall: 12 mm</p>
                       </div>

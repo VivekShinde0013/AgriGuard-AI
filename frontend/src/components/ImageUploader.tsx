@@ -9,7 +9,7 @@ type Prediction = {
     confidence_percent: number;
 };
 
-type PredictionResponse = {
+export type PredictionResponse = {
     disease: string;
     display_name: string;
     confidence: number;
@@ -19,7 +19,7 @@ type PredictionResponse = {
     top_predictions: Prediction[];
 };
 
-export default function ImageUploader({ onScanResult }: { onScanResult: (result: string) => void }) {
+export default function ImageUploader({ onScanResult }: { onScanResult: (result: PredictionResponse) => void }) {
     const inputRef = useRef<HTMLInputElement>(null);
     const [image, setImage] = useState<string | null>(null);
     const [fileName, setFileName] = useState("");
@@ -82,7 +82,7 @@ export default function ImageUploader({ onScanResult }: { onScanResult: (result:
             const data: PredictionResponse = await response.json();
 
             setResult(data);
-            onScanResult(data.display_name);
+            onScanResult(data);
         } catch (err) {
             setError(
                 err instanceof Error
