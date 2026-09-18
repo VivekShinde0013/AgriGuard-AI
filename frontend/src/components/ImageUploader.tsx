@@ -2,41 +2,40 @@
 
 import { useRef, useState } from "react";
 
-type PredictionResult = {
+type Prediction = {
+    class_name: string;
+    display_name: string;
+    confidence: number;
+    confidence_percent: number;
+};
+
+export type PredictionResponse = {
     disease: string;
     display_name: string;
     confidence: number;
     confidence_percent: number;
     confidence_level: string;
     confidence_message: string;
-    top_predictions: {
-        class_name: string;
-        display_name: string;
-        confidence: number;
-        confidence_percent: number;
-    }[];
+    top_predictions: Prediction[];
 };
 
-const API_URL = "http://127.0.0.1:8000";
-
-export default function ImageUploader() {
+export default function ImageUploader({ onScanResult }: { onScanResult: (result: PredictionResponse) => void }) {
     const inputRef = useRef<HTMLInputElement>(null);
-
     const [image, setImage] = useState<string | null>(null);
     const [fileName, setFileName] = useState("");
+    const [file, setFile] = useState<File | null>(null);
     const [scanning, setScanning] = useState(false);
-    const [result, setResult] = useState<PredictionResult | null>(null);
+    const [result, setResult] = useState<PredictionResponse | null>(null);
     const [error, setError] = useState<string | null>(null);
 
-    const handleImageChange = (
-        event: React.ChangeEvent<HTMLInputElement>
-    ) => {
-        const file = event.target.files?.[0];
+    const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const selectedFile = event.target.files?.[0];
 
-        if (!file) return;
+        if (!selectedFile) return;
 
-        setFileName(file.name);
-        setImage(URL.createObjectURL(file));
+        setFile(selectedFile);
+        setFileName(selectedFile.name);
+        setImage(URL.createObjectURL(selectedFile));
         setResult(null);
         setError(null);
     };
@@ -48,6 +47,7 @@ export default function ImageUploader() {
     const handleRemove = () => {
         setImage(null);
         setFileName("");
+        setFile(null);
         setResult(null);
         setError(null);
 
@@ -57,12 +57,7 @@ export default function ImageUploader() {
     };
 
     const handleScan = async () => {
-        const file = inputRef.current?.files?.[0];
-
-        if (!file) {
-            setError("Please select an image first.");
-            return;
-        }
+        if (!file) return;
 
         setScanning(true);
         setResult(null);
@@ -72,23 +67,27 @@ export default function ImageUploader() {
             const formData = new FormData();
             formData.append("file", file);
 
-            const response = await fetch(`${API_URL}/predictions/image`, {
-                method: "POST",
-                body: formData,
-            });
-
-            const data = await response.json();
+            const response = await fetch(
+                "http://127.0.0.1:8000/predictions/image",
+                {
+                    method: "POST",
+                    body: formData,
+                }
+            );
 
             if (!response.ok) {
-                throw new Error(data.detail || "Prediction failed.");
+                throw new Error(`API request failed: ${response.status}`);
             }
 
+            const data: PredictionResponse = await response.json();
+
             setResult(data);
+            onScanResult(data);
         } catch (err) {
             setError(
                 err instanceof Error
                     ? err.message
-                    : "Unable to connect to the prediction service."
+                    : "Failed to analyze the image."
             );
         } finally {
             setScanning(false);
@@ -151,55 +150,102 @@ export default function ImageUploader() {
                     )}
 
                     {error && (
-                        <div className="mt-5 w-full rounded-lg bg-red-50 p-4 text-left">
-                            <p className="text-sm font-medium text-red-700">
-                                Prediction Error
+                        <div className="mt-5 w-full rounded-xl border border-red-200 bg-red-50 p-4 text-left">
+                            <p className="font-medium text-red-700">
+                                Prediction failed
                             </p>
-                            <p className="mt-1 text-red-900">{error}</p>
+                            <p className="mt-1 text-sm text-red-600">
+                                {error}
+                            </p>
                         </div>
                     )}
 
                     {result && (
-                        <div className="mt-5 w-full rounded-lg bg-green-50 p-4 text-left">
-                            <p className="text-sm font-medium text-green-700">
-                                Disease Prediction
-                            </p>
-
-                            <p className="mt-1 text-xl font-semibold text-green-900">
-                                {result.display_name}
-                            </p>
-
-                            <p className="mt-2 text-sm text-slate-700">
-                                Confidence:{" "}
-                                <span className="font-semibold">
-                                    {result.confidence_percent}%
-                                </span>
-                            </p>
-
-                            <p className="mt-1 text-sm text-slate-600">
-                                {result.confidence_message}
-                            </p>
-
-                            {result.top_predictions.length > 1 && (
-                                <div className="mt-4">
-                                    <p className="text-sm font-medium text-slate-700">
-                                        Other predictions
+                        <div className="mt-5 w-full rounded-2xl border border-green-200 bg-green-50 p-5 text-left">
+                            <div className="flex items-center justify-between gap-4">
+                                <div>
+                                    <p className="text-sm font-medium text-green-700">
+                                        AI Diagnosis
                                     </p>
-
-                                    <ul className="mt-2 space-y-1 text-sm text-slate-600">
-                                        {result.top_predictions
-                                            .slice(1)
-                                            .map((prediction) => (
-                                                <li
-                                                    key={prediction.class_name}
-                                                >
-                                                    {prediction.display_name}:{" "}
-                                                    {prediction.confidence_percent}%
-                                                </li>
-                                            ))}
-                                    </ul>
+                                    <h4 className="mt-1 text-xl font-bold text-slate-900">
+                                        {result.display_name}
+                                    </h4>
                                 </div>
-                            )}
+
+                                <div className="rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-700">
+                                    {result.confidence_percent}% Confidence
+                                </div>
+                            </div>
+
+                            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                                <div className="rounded-xl bg-white p-4">
+                                    <p className="text-sm text-slate-500">
+                                        Disease
+                                    </p>
+                                    <p className="mt-1 font-semibold text-slate-900">
+                                        {result.disease}
+                                    </p>
+                                </div>
+
+                                <div className="rounded-xl bg-white p-4">
+                                    <p className="text-sm text-slate-500">
+                                        Display Name
+                                    </p>
+                                    <p className="mt-1 font-semibold text-slate-900">
+                                        {result.display_name}
+                                    </p>
+                                </div>
+
+                                <div className="rounded-xl bg-white p-4">
+                                    <p className="text-sm text-slate-500">
+                                        Confidence
+                                    </p>
+                                    <p className="mt-1 font-semibold text-slate-900">
+                                        {result.confidence_percent}%
+                                    </p>
+                                </div>
+
+                                <div className="rounded-xl bg-white p-4">
+                                    <p className="text-sm text-slate-500">
+                                        Confidence Level
+                                    </p>
+                                    <p className="mt-1 font-semibold capitalize text-slate-900">
+                                        {result.confidence_level}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="mt-4 rounded-xl bg-white p-4">
+                                <p className="text-sm font-medium text-slate-500">
+                                    Prediction Message
+                                </p>
+                                <p className="mt-1 text-slate-700">
+                                    {result.confidence_message}
+                                </p>
+                            </div>
+
+                            <div className="mt-4 rounded-xl bg-white p-4">
+                                <p className="text-sm font-medium text-slate-500">
+                                    Top Predictions
+                                </p>
+
+                                <div className="mt-3 space-y-3">
+                                    {result.top_predictions.map((prediction) => (
+                                        <div
+                                            key={prediction.class_name}
+                                            className="flex items-center justify-between gap-4"
+                                        >
+                                            <span className="font-medium text-slate-700">
+                                                {prediction.display_name}
+                                            </span>
+
+                                            <span className="text-sm font-semibold text-slate-900">
+                                                {prediction.confidence_percent}%
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>
