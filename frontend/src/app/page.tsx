@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import ImageUploader from "@/components/ImageUploader";
+import ImageUploader, { type PredictionResponse } from "@/components/ImageUploader";
 
 const stats = [
   {
@@ -69,6 +69,7 @@ const recentCases = [
 export default function Home() {
   const router = useRouter();
   const [activeNav, setActiveNav] = useState("Dashboard");
+  const [scanResult, setScanResult] = useState<PredictionResponse | null>(null);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -202,7 +203,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <ImageUploader />
+              <ImageUploader onScanResult={setScanResult} />
             </section>
             {/* Stats */}
             <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
