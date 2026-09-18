@@ -1,7 +1,8 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
-
+from pydantic import BaseModel
 from ml.inference import predict_disease
+from app.ai.risk import assess_risk
 import tempfile
 import os
 
@@ -9,6 +10,7 @@ app = FastAPI(
     title="AgriGuard AI API",
     version="0.1.0",
 )
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
@@ -16,6 +18,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+class RiskRequest(BaseModel):
+    prediction: dict
+    weather: dict
 
 @app.get("/")
 def root():
@@ -41,3 +47,7 @@ async def predict_image(file: UploadFile = File(...)):
     finally:
         if temp_path and os.path.exists(temp_path):
             os.remove(temp_path)
+
+@app.post("/risk")
+def calculate_risk(request: RiskRequest):
+    return assess_risk(request.prediction, request.weather)
