@@ -4,3 +4,4 @@ psycopg[binary]
 PyJWT
 passlib[bcrypt]
 bcrypt==4.3.0
+httpx
