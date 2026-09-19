@@ -68,7 +68,7 @@ export default function ImageUploader({ onScanResult }: { onScanResult: (result:
             formData.append("file", file);
 
             const response = await fetch(
-                "http://192.168.145.13:8000/predictions/image",
+                "http://192.168.134.13:8000/predictions/image",
                 {
                     method: "POST",
                     body: formData,

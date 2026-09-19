@@ -29,7 +29,7 @@ export default function Home() {
     const fetchWeather = async () => {
       try {
         const response = await fetch(
-          "http://192.168.145.13:8000/weather?lat=31.224&lon=75.7708"
+          "http://192.168.134.13:8000/weather?lat=31.224&lon=75.7708"
         );
 
         if (!response.ok) {
@@ -58,7 +58,7 @@ export default function Home() {
 
     const fetchRisk = async () => {
       try {
-        const response = await fetch("http://192.168.145.13:8000/risk", {
+        const response = await fetch("http://192.168.134.13:8000/risk", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -198,7 +198,7 @@ export default function Home() {
                     <div>
                       <p className="text-xs text-slate-500">Wind</p>
                       <p className="font-semibold">
-                        {weather.wind_speed} km/h
+                        {weather.wind_speed.toFixed(2)} km/h
                       </p>
                     </div>
                   </div>
