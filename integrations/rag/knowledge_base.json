@@ -158,6 +158,27 @@
       ],
       "source": "University of Florida IFAS Extension",
       "source_url": "https://ask.ifas.ufl.edu/publication/IN1430"
+    },
+    {
+      "id": "tomato_mosaic_virus_001",
+      "crop": "tomato",
+      "disease": "Tomato Mosaic Virus",
+      "causal_organism": "Tomato mosaic virus",
+      "symptoms": [
+        "Tomato leaves can develop mottled light and dark green patterns.",
+        "Leaves can become distorted or curled.",
+        "Plants can become stunted.",
+        "Fruit can develop uneven ripening or mottled coloration."
+      ],
+      "management": [
+        "Use virus-free seed and transplants.",
+        "Remove and destroy infected plants where appropriate.",
+        "Wash hands and disinfect tools after handling infected plants.",
+        "Control weeds and volunteer plants that can serve as virus sources.",
+        "Avoid handling healthy plants after handling infected plants."
+      ],
+      "source": "University of Minnesota Extension",
+      "source_url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/tomato-viruses"
     }
   ]
 }
