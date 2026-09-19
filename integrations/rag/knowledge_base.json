@@ -136,6 +136,28 @@
       ],
       "source": "University of Florida IFAS Extension",
       "source_url": "https://edis.ifas.ufl.edu/publication/PP351"
+    },
+    {
+      "id": "tomato_yellow_leaf_curl_virus_001",
+      "crop": "tomato",
+      "disease": "Tomato Yellow Leaf Curl Virus",
+      "causal_organism": "Tomato yellow leaf curl virus",
+      "symptoms": [
+        "Tomato leaves can curl upward.",
+        "Leaf margins can become yellow or chlorotic.",
+        "Leaves can become reduced in size.",
+        "Plants can become stunted.",
+        "Flowers can drop, resulting in reduced fruit set."
+      ],
+      "management": [
+        "Use virus-free tomato transplants.",
+        "Scout plants regularly for symptoms and whiteflies.",
+        "Remove and destroy severely infected plants where appropriate.",
+        "Remove weeds and volunteer tomato plants that can serve as sources of infection or whitefly hosts.",
+        "Destroy infected crop plants promptly after harvest to reduce sources of virus and whiteflies."
+      ],
+      "source": "University of Florida IFAS Extension",
+      "source_url": "https://ask.ifas.ufl.edu/publication/IN1430"
     }
   ]
 }
