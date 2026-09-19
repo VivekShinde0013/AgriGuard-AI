@@ -115,6 +115,27 @@
       ],
       "source": "University of Connecticut Extension",
       "source_url": "https://ipm.cahnr.uconn.edu/tomato-spider-mites/"
+    },
+    {
+      "id": "tomato_target_spot_001",
+      "crop": "tomato",
+      "disease": "Target Spot",
+      "causal_organism": "Corynespora cassiicola",
+      "symptoms": [
+        "Dark brown pinpoint lesions can develop on tomato leaves.",
+        "As lesions enlarge, their centers can become light brown to gray.",
+        "Leaf lesions can develop concentric rings and may merge together.",
+        "Severe leaf infection can cause premature defoliation.",
+        "Fruit lesions can begin as small brown sunken spots."
+      ],
+      "management": [
+        "Remove and destroy severely affected plant material.",
+        "Maintain good field sanitation.",
+        "Improve air circulation around plants.",
+        "Avoid prolonged leaf wetness where possible."
+      ],
+      "source": "University of Florida IFAS Extension",
+      "source_url": "https://edis.ifas.ufl.edu/publication/PP351"
     }
   ]
 }
