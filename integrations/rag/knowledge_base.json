@@ -75,6 +75,26 @@
       ],
       "source": "University of Minnesota Extension",
       "source_url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/tomato-leaf-mold"
+    },
+    {
+      "id": "tomato_septoria_leaf_spot_001",
+      "crop": "tomato",
+      "disease": "Septoria Leaf Spot",
+      "causal_organism": "Septoria lycopersici",
+      "symptoms": [
+        "Small circular brown spots can develop on tomato leaves.",
+        "Spots can have light gray or tan centers with dark margins.",
+        "Small dark specks can develop in the centers of leaf spots.",
+        "Severely affected leaves can drop prematurely."
+      ],
+      "management": [
+        "Remove affected leaves and plant debris.",
+        "Improve air circulation around plants.",
+        "Keep foliage as dry as possible.",
+        "Avoid overhead watering where possible."
+      ],
+      "source": "Tamil Nadu Agricultural University",
+      "source_url": "https://agritech.tnau.ac.in/pdf/9.pdf"
     }
   ]
 }
