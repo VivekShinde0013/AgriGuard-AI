@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from backend.app.risk import router as risk_router
 from backend.app.auth.routes import router as auth_router
 from backend.app.farms import router as farms_router
 from backend.app.predictions.routes import router as predictions_router
@@ -31,3 +31,4 @@ app.include_router(auth_router)
 app.include_router(farms_router)
 app.include_router(predictions_router)
 app.include_router(weather_router)
+app.include_router(risk_router)
