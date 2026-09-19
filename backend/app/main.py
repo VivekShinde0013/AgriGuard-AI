@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.app.auth.routes import router as auth_router
+from backend.app.farms import router as farms_router
 from backend.app.predictions.routes import router as predictions_router
 from backend.app.weather import router as weather_router
 
@@ -9,6 +10,11 @@ app = FastAPI(
     title="AgriGuard AI API",
     version="0.1.0"
 )
+@app.get("/health")
+def health():
+    return {
+        "status": "healthy"
+    }
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,5 +28,6 @@ app.add_middleware(
 )
 
 app.include_router(auth_router)
+app.include_router(farms_router)
 app.include_router(predictions_router)
 app.include_router(weather_router)
