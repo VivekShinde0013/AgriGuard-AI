@@ -36,6 +36,25 @@
       ],
       "source": "Tamil Nadu Agricultural University",
       "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_11.html"
+    },
+    {
+      "id": "tomato_late_blight_001",
+      "crop": "tomato",
+      "disease": "Late Blight",
+      "causal_organism": "Phytophthora infestans",
+      "symptoms": [
+        "Dark, water-soaked lesions can develop on tomato leaves.",
+        "Lesions can enlarge rapidly under favorable conditions.",
+        "Affected leaves can become brown and die.",
+        "Dark lesions can also develop on tomato fruits."
+      ],
+      "management": [
+        "Remove and destroy severely affected plant material.",
+        "Maintain good field sanitation.",
+        "Avoid prolonged leaf wetness where possible."
+      ],
+      "source": "Tamil Nadu Agricultural University",
+      "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_3.html"
     }
   ]
 }
