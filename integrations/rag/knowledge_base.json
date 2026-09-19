@@ -17,6 +17,168 @@
       ],
       "source": "Tamil Nadu Agricultural University",
       "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+    },
+    {
+      "id": "tomato_bacterial_spot_001",
+      "crop": "tomato",
+      "disease": "Bacterial Spot",
+      "causal_organism": "Xanthomonas axonopodis pv. vesicatoria",
+      "symptoms": [
+        "Small brown spots can develop on tomato leaves.",
+        "Leaf spots may have yellow halos.",
+        "Severe disease can cause affected leaves to drop.",
+        "Water-soaked spots can develop on green fruits."
+      ],
+      "management": [
+        "Use disease-free seed.",
+        "Maintain good field sanitation.",
+        "Remove and destroy severely affected plant material."
+      ],
+      "source": "Tamil Nadu Agricultural University",
+      "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_11.html"
+    },
+    {
+      "id": "tomato_late_blight_001",
+      "crop": "tomato",
+      "disease": "Late Blight",
+      "causal_organism": "Phytophthora infestans",
+      "symptoms": [
+        "Dark, water-soaked lesions can develop on tomato leaves.",
+        "Lesions can enlarge rapidly under favorable conditions.",
+        "Affected leaves can become brown and die.",
+        "Dark lesions can also develop on tomato fruits."
+      ],
+      "management": [
+        "Remove and destroy severely affected plant material.",
+        "Maintain good field sanitation.",
+        "Avoid prolonged leaf wetness where possible."
+      ],
+      "source": "Tamil Nadu Agricultural University",
+      "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_3.html"
+    },
+    {
+      "id": "tomato_leaf_mold_001",
+      "crop": "tomato",
+      "disease": "Leaf Mold",
+      "causal_organism": "Passalora fulva",
+      "symptoms": [
+        "Pale yellow-green spots can develop on the upper surface of tomato leaves.",
+        "Olive-green to brown velvety growth can develop on the lower leaf surface.",
+        "Affected leaves can wither and die.",
+        "In severe cases, blossoms and fruit can also be affected."
+      ],
+      "management": [
+        "Improve air movement around plants.",
+        "Avoid watering foliage where possible.",
+        "Reduce excessive humidity around plants.",
+        "Remove crop residue at the end of the season."
+      ],
+      "source": "University of Minnesota Extension",
+      "source_url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/tomato-leaf-mold"
+    },
+    {
+      "id": "tomato_septoria_leaf_spot_001",
+      "crop": "tomato",
+      "disease": "Septoria Leaf Spot",
+      "causal_organism": "Septoria lycopersici",
+      "symptoms": [
+        "Small circular brown spots can develop on tomato leaves.",
+        "Spots can have light gray or tan centers with dark margins.",
+        "Small dark specks can develop in the centers of leaf spots.",
+        "Severely affected leaves can drop prematurely."
+      ],
+      "management": [
+        "Remove affected leaves and plant debris.",
+        "Improve air circulation around plants.",
+        "Keep foliage as dry as possible.",
+        "Avoid overhead watering where possible."
+      ],
+      "source": "Tamil Nadu Agricultural University",
+      "source_url": "https://agritech.tnau.ac.in/pdf/9.pdf"
+    },
+    {
+      "id": "tomato_spider_mites_001",
+      "crop": "tomato",
+      "disease": "Spider Mites",
+      "causal_organism": "Tetranychus urticae",
+      "symptoms": [
+        "Small white to yellow stippling or speckling can develop on tomato leaves.",
+        "Affected leaves can become brown and dry as feeding continues.",
+        "Leaves may curl as damage becomes severe.",
+        "Webbing can develop on the undersides of leaves when mite populations are high."
+      ],
+      "management": [
+        "Inspect new plants regularly before introducing them into the growing area.",
+        "Inspect the undersides of leaves for mites and webbing.",
+        "Encourage natural enemies such as lady beetles, lacewings, and predatory thrips.",
+        "Use water to help dislodge mites from affected plants where appropriate."
+      ],
+      "source": "University of Connecticut Extension",
+      "source_url": "https://ipm.cahnr.uconn.edu/tomato-spider-mites/"
+    },
+    {
+      "id": "tomato_target_spot_001",
+      "crop": "tomato",
+      "disease": "Target Spot",
+      "causal_organism": "Corynespora cassiicola",
+      "symptoms": [
+        "Dark brown pinpoint lesions can develop on tomato leaves.",
+        "As lesions enlarge, their centers can become light brown to gray.",
+        "Leaf lesions can develop concentric rings and may merge together.",
+        "Severe leaf infection can cause premature defoliation.",
+        "Fruit lesions can begin as small brown sunken spots."
+      ],
+      "management": [
+        "Remove and destroy severely affected plant material.",
+        "Maintain good field sanitation.",
+        "Improve air circulation around plants.",
+        "Avoid prolonged leaf wetness where possible."
+      ],
+      "source": "University of Florida IFAS Extension",
+      "source_url": "https://edis.ifas.ufl.edu/publication/PP351"
+    },
+    {
+      "id": "tomato_yellow_leaf_curl_virus_001",
+      "crop": "tomato",
+      "disease": "Tomato Yellow Leaf Curl Virus",
+      "causal_organism": "Tomato yellow leaf curl virus",
+      "symptoms": [
+        "Tomato leaves can curl upward.",
+        "Leaf margins can become yellow or chlorotic.",
+        "Leaves can become reduced in size.",
+        "Plants can become stunted.",
+        "Flowers can drop, resulting in reduced fruit set."
+      ],
+      "management": [
+        "Use virus-free tomato transplants.",
+        "Scout plants regularly for symptoms and whiteflies.",
+        "Remove and destroy severely infected plants where appropriate.",
+        "Remove weeds and volunteer tomato plants that can serve as sources of infection or whitefly hosts.",
+        "Destroy infected crop plants promptly after harvest to reduce sources of virus and whiteflies."
+      ],
+      "source": "University of Florida IFAS Extension",
+      "source_url": "https://ask.ifas.ufl.edu/publication/IN1430"
+    },
+    {
+      "id": "tomato_mosaic_virus_001",
+      "crop": "tomato",
+      "disease": "Tomato Mosaic Virus",
+      "causal_organism": "Tomato mosaic virus",
+      "symptoms": [
+        "Tomato leaves can develop mottled light and dark green patterns.",
+        "Leaves can become distorted or curled.",
+        "Plants can become stunted.",
+        "Fruit can develop uneven ripening or mottled coloration."
+      ],
+      "management": [
+        "Use virus-free seed and transplants.",
+        "Remove and destroy infected plants where appropriate.",
+        "Wash hands and disinfect tools after handling infected plants.",
+        "Control weeds and volunteer plants that can serve as virus sources.",
+        "Avoid handling healthy plants after handling infected plants."
+      ],
+      "source": "University of Minnesota Extension",
+      "source_url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/tomato-viruses"
     }
   ]
 }
