@@ -83,7 +83,14 @@ export default function CasesPage() {
                       <td className="px-5 py-4">{item.risk}</td>
                       <td className="px-5 py-4">{item.status}</td>
                       <td className="px-5 py-4">
-                        <button className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-medium hover:bg-slate-50">
+                        <button
+                          onClick={() =>
+                            window.alert(
+                              `Case ID: ${item.id}\nCrop: ${item.crop}\nDisease: ${item.disease}\nLocation: ${item.location}\nRisk: ${item.risk}\nStatus: ${item.status}`
+                            )
+                          }
+                          className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-medium hover:bg-slate-50"
+                        >
                           View
                         </button>
                       </td>

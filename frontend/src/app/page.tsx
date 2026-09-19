@@ -286,7 +286,10 @@ export default function Home() {
                     Review Validations
                   </button>
 
-                  <button className="flex w-full items-center gap-3 rounded-lg border border-slate-200 p-3 text-left text-sm font-medium hover:bg-slate-50">
+                  <button
+                    onClick={() => (window.location.href = "/gis")}
+                    className="flex w-full items-center gap-3 rounded-lg border border-slate-200"
+                  >
                     <span>🗺️</span>
                     Open GIS Map
                   </button>
