@@ -95,6 +95,26 @@
       ],
       "source": "Tamil Nadu Agricultural University",
       "source_url": "https://agritech.tnau.ac.in/pdf/9.pdf"
+    },
+    {
+      "id": "tomato_spider_mites_001",
+      "crop": "tomato",
+      "disease": "Spider Mites",
+      "causal_organism": "Tetranychus urticae",
+      "symptoms": [
+        "Small white to yellow stippling or speckling can develop on tomato leaves.",
+        "Affected leaves can become brown and dry as feeding continues.",
+        "Leaves may curl as damage becomes severe.",
+        "Webbing can develop on the undersides of leaves when mite populations are high."
+      ],
+      "management": [
+        "Inspect new plants regularly before introducing them into the growing area.",
+        "Inspect the undersides of leaves for mites and webbing.",
+        "Encourage natural enemies such as lady beetles, lacewings, and predatory thrips.",
+        "Use water to help dislodge mites from affected plants where appropriate."
+      ],
+      "source": "University of Connecticut Extension",
+      "source_url": "https://ipm.cahnr.uconn.edu/tomato-spider-mites/"
     }
   ]
 }
