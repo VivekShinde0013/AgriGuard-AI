@@ -17,6 +17,25 @@
       ],
       "source": "Tamil Nadu Agricultural University",
       "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+    },
+    {
+      "id": "tomato_bacterial_spot_001",
+      "crop": "tomato",
+      "disease": "Bacterial Spot",
+      "causal_organism": "Xanthomonas axonopodis pv. vesicatoria",
+      "symptoms": [
+        "Small brown spots can develop on tomato leaves.",
+        "Leaf spots may have yellow halos.",
+        "Severe disease can cause affected leaves to drop.",
+        "Water-soaked spots can develop on green fruits."
+      ],
+      "management": [
+        "Use disease-free seed.",
+        "Maintain good field sanitation.",
+        "Remove and destroy severely affected plant material."
+      ],
+      "source": "Tamil Nadu Agricultural University",
+      "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_11.html"
     }
   ]
 }
