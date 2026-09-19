@@ -55,6 +55,26 @@
       ],
       "source": "Tamil Nadu Agricultural University",
       "source_url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_3.html"
+    },
+    {
+      "id": "tomato_leaf_mold_001",
+      "crop": "tomato",
+      "disease": "Leaf Mold",
+      "causal_organism": "Passalora fulva",
+      "symptoms": [
+        "Pale yellow-green spots can develop on the upper surface of tomato leaves.",
+        "Olive-green to brown velvety growth can develop on the lower leaf surface.",
+        "Affected leaves can wither and die.",
+        "In severe cases, blossoms and fruit can also be affected."
+      ],
+      "management": [
+        "Improve air movement around plants.",
+        "Avoid watering foliage where possible.",
+        "Reduce excessive humidity around plants.",
+        "Remove crop residue at the end of the season."
+      ],
+      "source": "University of Minnesota Extension",
+      "source_url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/tomato-leaf-mold"
     }
   ]
 }
