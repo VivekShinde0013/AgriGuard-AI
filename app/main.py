@@ -1,7 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from ml.inference import predict_disease
 from app.ai.risk import assess_risk
 import tempfile
 import os
@@ -33,6 +32,8 @@ def health():
 
 @app.post("/predictions/image")
 async def predict_image(file: UploadFile = File(...)):
+    from ml.inference import predict_disease
+
     suffix = os.path.splitext(file.filename)[1]
     temp_path = None
 
